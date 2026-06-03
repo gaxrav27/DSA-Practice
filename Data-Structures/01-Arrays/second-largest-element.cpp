@@ -18,18 +18,24 @@ int main()
     cout<<"Enter the size of array: "<<endl;
     cin>>n;
     int arr[n];
+    int largest = arr[0];
+    int seclargest= INT_MIN;
     for(int i=0;i<n;i++)
     {
         cin>>arr[i];
-    }
-    int largest = arr[0];
-    for(int i=1;i<n;i++)
-    {
         if(arr[i]>largest)
         {
+            seclargest = largest;
             largest = arr[i];
         }
     }
-    cout<<"The largest element in the array is: "<<largest<<endl;
+    if(largest == seclargest)
+    {
+        cout<<"There is no second largest element in the array."<<endl;
+    }
+    else
+    {
+        cout<<"The second largest element in the array is: "<<seclargest<<endl;
+    }
 return 0;
 }

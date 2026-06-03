@@ -14,22 +14,27 @@
 using namespace std;
 int main()
 {
-    int n;
+int n;
     cout<<"Enter the size of array: "<<endl;
     cin>>n;
     int arr[n];
+    bool is_sorted = true;
     for(int i=0;i<n;i++)
     {
         cin>>arr[i];
     }
-    int largest = arr[0];
-    for(int i=1;i<n;i++)
+    for(int i = 0; i<n;i++)
     {
-        if(arr[i]>largest)
+        if(arr[i]>=arr[i-1])
+        continue;
+        else
         {
-            largest = arr[i];
+            is_sorted = false; break;
         }
     }
-    cout<<"The largest element in the array is: "<<largest<<endl;
+    if(is_sorted == true)
+    cout<<"The array is sorted";
+    else
+    cout<<"The araay is not sorted";
 return 0;
 }

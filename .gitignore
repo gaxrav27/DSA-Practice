@@ -69,3 +69,13 @@ Testing/
 .cache/
 
 .vscode/
+
+# Ignore all compiled executables with no extension in the current directory
+*
+!*/
+!*.*
+!.gitignore
+!README.md
+
+# Alternatively, if you use a specific output name like a.out
+*.out

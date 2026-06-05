@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*Brute force soln
 int majorityElement(vector<int> &nums)
 {
     int count = 1;
@@ -26,6 +27,41 @@ int majorityElement(vector<int> &nums)
         }
     }
     return maxElement;
+} */
+//Optimal approach - Moore's Voting Algo
+int majorityElement(vector<int> &nums)
+{
+    int count=0;
+    int maxelement = 0;
+    for(int i=0; i<nums.size();i++)
+    {
+        if(count==0)
+        {
+            count = 1;
+            maxelement = nums[i];
+        }
+        else if(nums[i]==maxelement)
+        {
+            count++;
+        }
+        else
+        {
+            count--;
+        }
+    }
+    int count =0;
+    for(int i=0;i<nums.size();i++)
+    {
+        if(nums[i]==maxelement)
+        {
+            count++;
+        }
+    }
+    if(count>(nums.size()/2))
+    {
+        return maxelement;
+    }
+    return -1;
 }
 int main()
 {

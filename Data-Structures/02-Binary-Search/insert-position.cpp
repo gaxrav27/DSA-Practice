@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int bsub(vector<int> &nums, int target)
+//inserting is same as finding lower bound
+int bslb(vector<int> &nums, int target)
 {
     int low = 0;
     int high = nums.size()-1;
@@ -9,7 +9,7 @@ int bsub(vector<int> &nums, int target)
     while(low<=high)
     {
         int mid = low+((high-low)/2);
-        if(nums[mid]>target)
+        if(nums[mid]>=target)
         { 
           ans = mid;
           high = mid -1;
@@ -25,7 +25,7 @@ int main()
 {
 vector<int> nums = {12,34,34,36,37,38,41,56,69,73,89};
 //lb = lower_bound(nums,nums.end(),69); shortcut worrks for upper bound too
-int res = bsub(nums, 37);
+int res = bslb(nums, 37);
 cout<<res;
 return 0;
 }

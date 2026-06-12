@@ -8,13 +8,9 @@ int bs(vector<int> &nums, int target)
     while(low<=high)
     {
         int mid = low+((high-low)/2);
-        if(nums[mid]==target)
+        if(nums[mid]>=target)
         {
-            ans = mid;
-            break;
-        }
-        if(nums[mid]>target)
-        {
+          ans = mid;
           high = mid -1;
         }
         if(nums[mid]<target)

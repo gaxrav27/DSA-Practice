@@ -8,14 +8,14 @@ int bslb(vector<int> &nums, int target)
     while(low<=high)
     {
         int mid = low+((high-low)/2);
-        if(nums[mid]>=target)
+        if(nums[mid]<=target)
         { 
           ans = mid;
-          high = mid -1;
+          low = mid +1;
         }
         else
         {
-          low = mid + 1;
+          high = mid -1;
         }
     }
     return ans;
@@ -23,7 +23,7 @@ int bslb(vector<int> &nums, int target)
 int main()
 {
 vector<int> nums = {12,34,34,36,37,38,41,56,69,73,89};
-int res = bslb(nums, 34);
+int res = bslb(nums, 23);
 cout<<res;
 return 0;
 }

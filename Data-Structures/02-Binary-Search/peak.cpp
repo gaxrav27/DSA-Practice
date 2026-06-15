@@ -6,7 +6,9 @@ int peakelement(vector<int> &nums)
     int right = nums.size() - 2;
     if(nums[0]>nums[1])
     return 0;
-    if(nums[nums.size()-1]>nums[nums.size()-1])
+    if(nums[nums.size()-1]>nums[nums.size()-2])
+    return nums.size()-1;
+
     while (left <= right)
     {
         int mid = left + (right - left) / 2;

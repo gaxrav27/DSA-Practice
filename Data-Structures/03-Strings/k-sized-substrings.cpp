@@ -39,7 +39,7 @@ int main()
 {
     string s = "pqpqs";
     int k = 2;
-    int res = countSubstr(s, k);
+    int res = countExactlyK(s, k);
     cout << res;
     return 0;
 }

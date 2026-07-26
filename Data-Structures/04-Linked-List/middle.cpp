@@ -11,7 +11,7 @@ public:
         next = nullptr;
     }
 };
-ListNode *middleNode(ListNode *head)
+/*ListNode *middleNode(ListNode *head)
 {
     ListNode *temp = head;
     ListNode *middle = head;
@@ -28,6 +28,17 @@ ListNode *middleNode(ListNode *head)
         }
     }
     return middle;
+}*/
+ListNode *middleNode(ListNode *head) //optimal one pass approach
+{
+    ListNode *slow = head;
+    ListNode *fast = head;
+    while (fast != nullptr && fast->next != nullptr)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
 }
 int main()
 {

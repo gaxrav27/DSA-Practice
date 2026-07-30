@@ -30,5 +30,5 @@ ListNode* hasCycle(ListNode *head)
             return slow;
         }
     }
-    return nullptr;    
+    return nullptr;
 }

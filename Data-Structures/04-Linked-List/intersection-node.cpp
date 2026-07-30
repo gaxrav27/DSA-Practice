@@ -51,3 +51,33 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         }
         return nullptr;
     }
+/*Another approach*/
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        ListNode* tempA = headA;
+        ListNode* tempB = headB;
+        while(tempA!=tempB)
+        {
+            if(tempA==nullptr)
+            {
+                tempA=headB;
+            }
+            else
+            {
+                tempA=tempA->next;
+            }
+            if(tempB==nullptr)
+            {
+                tempB=headA;
+            }
+            else
+            {
+                tempB=tempB->next;
+            }
+        }
+        return tempA;
+    }
+/*why this works?
+resetting the pointer to the head of the other list after 
+commpleting its original list ensures that both pointers traverse the same distance
+thus ensuring that they meet at intersection node if it exists.
+*/

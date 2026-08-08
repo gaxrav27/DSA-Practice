@@ -5,3 +5,4 @@ Array Patterns:
 1. Dutch National Flag 
 2. Moore's Voting Algorithm
 3. Kadane's Algorithm
+

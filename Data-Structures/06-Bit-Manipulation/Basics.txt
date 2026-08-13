@@ -1,0 +1,20 @@
+Operations:
+1. AND operator:
+Example:
+  1 0 1 1 
+& 0 1 1 1
+= 0 0 1 1 
+2. OR operator
+does OR operation on each bit
+3. XOR (^)
+1->odd number of 1's
+0->even number of 1's
+4.Right Shift (>>)
+01011>>2 = 010 (11 falls off cliff)
+5.Left Shift (<<)
+1101<<1 = 11010
+%%% n to -n :
+Write n in binary form -> take 1's complement -> add 1 to it -> essentially 2's complement
+6. NOT operator
+a. flip
+b.if -ve -> take 2's complement else stop

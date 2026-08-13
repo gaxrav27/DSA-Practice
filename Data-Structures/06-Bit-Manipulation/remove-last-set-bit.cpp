@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int removelastset(int n)
+{
+    return (n & (n - 1));
+}
+int main()
+{
+int n = 9;
+auto res = removelastset(n);
+cout<<res;
+return 0;
+}
